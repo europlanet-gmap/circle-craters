@@ -7,6 +7,7 @@
      (at your option) any later version.
 
 """
+from __future__ import absolute_import
 
 __author__ = 'braden.sarah@gmail.com'
 __date__ = '2014-12-31'
@@ -14,11 +15,11 @@ __copyright__ = 'Copyright 2014, Sarah E Braden'
 
 import unittest
 
-from PyQt4.QtGui import QDialogButtonBox, QDialog
+from qgis.PyQt.QtWidgets import QDialogButtonBox, QDialog
 
 from circle_craters_dialog import CircleCratersDialog
 
-from utilities import get_qgis_app
+from .utilities import get_qgis_app
 QGIS_APP = get_qgis_app()
 
 

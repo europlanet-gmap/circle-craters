@@ -23,7 +23,7 @@
 
 import os
 
-from PyQt4 import QtGui, QtCore, uic
+from qgis.PyQt import QtGui, QtCore, uic, QtWidgets
 
 from .errors import CircleCraterError
 
@@ -32,7 +32,7 @@ ExportDialogBase, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'export_dialog_base.ui'))
 
 
-class ExportDialog(QtGui.QDialog, ExportDialogBase):
+class ExportDialog(QtWidgets.QDialog, ExportDialogBase):
     selected = QtCore.pyqtSignal(object, object, str)
 
     def __init__(self, parent=None):
@@ -48,7 +48,8 @@ class ExportDialog(QtGui.QDialog, ExportDialogBase):
         self.filename_choose_button.clicked.connect(self.choose_file)
 
     def choose_file(self):
-        self.filename_input.setText(QtGui.QFileDialog.getSaveFileName())
+        file, ext = QtWidgets.QFileDialog.getSaveFileName()
+        self.filename_input.setText(file)
 
     def show(self, choices):
         if not choices:
