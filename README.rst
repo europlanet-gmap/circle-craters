@@ -2,6 +2,8 @@
 circle-craters
 ===============================
 
+*this is an initial porting of the plugin to qgis 3.x. be aware that most of the details in this readme do not apply at the present state. But the plugin can still be safely placed in the local qgis plugin directory and tested out. I recommond using the system variable QGIS_PLUGINPATH, and point that to the parent folder of the source code of this plugin, which must be named "circle-craters"*
+
 A crater-counting python plugin for `QGIS`_.
 
 Current Status: In Testing
